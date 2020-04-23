@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.crmapplication.qa.testcases.HomePageTest">
+      <class name="com.crmapplication.qa.testcases.DesktopLandingTestPage">
         <methods>
+          <include name="DesktopLandingPageLogoTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="HomePageTitle"/>
         </methods>
-      </class> <!-- com.crmapplication.qa.testcases.HomePageTest -->
+      </class> <!-- com.crmapplication.qa.testcases.DesktopLandingTestPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

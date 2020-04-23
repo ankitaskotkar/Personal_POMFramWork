@@ -20,7 +20,7 @@ public class TestBase {
 		 try {
 				prop = new Properties();
 				FileInputStream ip = 
-				new FileInputStream("C:/Users/askot/workspace/POMFramworkTest/src/main/java/com/crmapplication/qa/config/config.properties");
+				new FileInputStream("C:\\Users\\akotkar\\study\\Personal_POMFramWork\\src\\main\\java\\com\\crmapplication\\qa\\config\\config.properties");
 				prop.load(ip);
 			} 
 		catch (FileNotFoundException e) {
@@ -35,7 +35,7 @@ public class TestBase {
 	public void initialization(){
 		String browserName=prop.getProperty("browser");
 		if(browserName.equals("chrome")){
-			  System.setProperty("webdriver.chrome.driver", "F:/Ankita/Study/chromedriver_win32/chromedriver.exe");	  
+			  System.setProperty("webdriver.chrome.driver", prop.getProperty("systemPath")+"Personal_POMFramWork\\Drivers\\chromedriver.exe");	  
 			   driver= new ChromeDriver();
 		}else if(browserName.equals("FireFox")){
 			 driver= new FirefoxDriver();

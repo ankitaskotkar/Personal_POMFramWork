@@ -1,11 +1,14 @@
 package com.crmapplication.qa.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+
+import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 
+import com.crmapplication.qa.applicationpages.CalendarPage;
+import com.crmapplication.qa.applicationpages.ContactsPage;
 import com.crmapplication.qa.applicationpages.DesktopLandingPage;
 import com.crmapplication.qa.applicationpages.HomePage;
 import com.crmapplication.qa.applicationpages.LoginPage;
@@ -15,12 +18,14 @@ public class HomePageTest extends TestBase{
 	DesktopLandingPage desktopPage;
 	LoginPage loginPage;
 	HomePage homePage;
+	ContactsPage contactPage;
+	CalendarPage calendarPage;
 	
 /*	public HomePageTest() {
 		super();
 	}*/
 	
-	@BeforeSuite
+	@BeforeMethod
 	public void setUp(){
 		initialization();
 		desktopPage= new DesktopLandingPage();
@@ -29,17 +34,25 @@ public class HomePageTest extends TestBase{
 		homePage=loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
 	}
 	
-	@Test
-	public void HomePageTitle(){
+	@Test(priority = 1)
+	public void HomePageTitleTest(){
 		
 		String title=homePage.validateHomePageTitle();
 		System.out.println(title);
 		Assert.assertEquals(title, "Cogmento CRM");
 	}
 	
-	@AfterSuite
-	public void tearDown(){
-		driver.quit();
+	@Test(priority = 2)
+	public void clickOnContactsPageTest() {
+		contactPage=homePage.clickOnContact();
 	}
 	
+	@Test(priority = 3)
+	public void clickonCalendarPageTest() {
+		calendarPage=homePage.clickOnCalendar();	
+	}
+	
+	/*
+	 * @AfterMethod public void tearDown(){ driver.quit(); }
+	 */
 }

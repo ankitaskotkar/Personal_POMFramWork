@@ -1,8 +1,7 @@
 package com.crmapplication.qa.testcases;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crmapplication.qa.applicationpages.DesktopLandingPage;
@@ -18,7 +17,7 @@ public class LoginPageTest extends TestBase{
 	/*public LoginPageTest() {
 		super();
 	}*/
-	@BeforeSuite
+	@BeforeMethod
 	public void setUp(){
 		initialization();
 		desktopPage= new DesktopLandingPage();		
@@ -27,12 +26,12 @@ public class LoginPageTest extends TestBase{
 	}
 	
 	@Test
-	public void validateLogin(){
+	public void validateLoginTest(){
 		homePage=loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
 		
 	}
 		
-	@AfterSuite
+	@AfterMethod
 	public void tearDown(){
 		driver.quit();
 	}

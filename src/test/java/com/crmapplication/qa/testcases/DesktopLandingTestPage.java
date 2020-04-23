@@ -17,7 +17,7 @@ public class DesktopLandingTestPage extends TestBase {
 	/*public DesktopLandingTestPage() {
 		super();	
 	}*/
-	@BeforeSuite
+	@BeforeMethod
 	public void setUp(){		
 		initialization();
 		desktopPage= new DesktopLandingPage();	
@@ -28,10 +28,11 @@ public class DesktopLandingTestPage extends TestBase {
 	public void DesktopLandingPageTitleTest(){
 		String title=desktopPage.ValidateDesktopPageTitle();
 		Assert.assertEquals(title, "Free CRM #1 cloud software for any business large or small");
+		System.out.println(title);
 	}
 	
 	@Test(priority=2)
-	public void DesktopLandingPageLogo(){
+	public void DesktopLandingPageLogoTest(){
 		boolean flag=desktopPage.validateDesktopPageLogo();
 		Assert.assertTrue(flag);
 	}
@@ -42,8 +43,8 @@ public class DesktopLandingTestPage extends TestBase {
 		
 	}
 	
-	/*@AfterSuite
+	@AfterMethod
 	public void tearDown(){
 		driver.quit();
-	}*/
+	}
 }

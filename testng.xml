@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite verbose="1" name="CrmApplication" annotations="JDK" parallel="tests">
+         
+   <test name="Test1">
+	 <classes>
+	   <class name="com.crmapplication.qa.testcases.DesktopLandingTestPage"/>
+	 <!--   <class name="com.crmapplication.qa.testcases.LoginPageTest"/>
+	    <class name="com.crmapplication.qa.testcases.HomePageTest"/>
+	   <class name="com.crmapplication.qa.testcases.ContactPagetest"/> -->
+	  
+	   
+	 </classes>
+   </test>
+   
+  
+   
+   
+</suite>
